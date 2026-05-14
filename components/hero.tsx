@@ -4,105 +4,76 @@ import { ArrowRight, MessageCircle } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#0A0F1E] via-[#0D1A2E] to-[#0A0F1E] mesh-background">
-      {/* Fondo con malla de nodos */}
-      <div className="absolute inset-0 opacity-30">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="mesh" patternUnits="userSpaceOnUse" width="100" height="100">
-              <circle cx="10" cy="10" r="1.5" fill="#FF7F70" opacity="0.4" />
-              <circle cx="90" cy="10" r="1.5" fill="#FF7F70" opacity="0.4" />
-              <circle cx="50" cy="50" r="1.5" fill="#FF7F70" opacity="0.4" />
-              <circle cx="10" cy="90" r="1.5" fill="#FF7F70" opacity="0.4" />
-              <circle cx="90" cy="90" r="1.5" fill="#FF7F70" opacity="0.4" />
-              <line x1="10" y1="10" x2="90" y2="10" stroke="#FF7F70" strokeWidth="0.5" opacity="0.2" />
-              <line x1="10" y1="10" x2="50" y2="50" stroke="#FF7F70" strokeWidth="0.5" opacity="0.2" />
-              <line x1="90" y1="10" x2="50" y2="50" stroke="#FF7F70" strokeWidth="0.5" opacity="0.2" />
-              <line x1="10" y1="90" x2="50" y2="50" stroke="#FF7F70" strokeWidth="0.5" opacity="0.2" />
-              <line x1="90" y1="90" x2="50" y2="50" stroke="#FF7F70" strokeWidth="0.5" opacity="0.2" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#mesh)" />
-        </svg>
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12">
+      {/* Decorative orbs */}
+      <div className="floating-orb orb-pink w-96 h-96 top-20 -left-48" />
+      <div className="floating-orb orb-teal w-80 h-80 top-1/2 -right-40" />
+      <div className="floating-orb orb-lavender w-72 h-72 bottom-20 left-1/3" />
+      <div className="floating-orb orb-gold w-64 h-64 -bottom-20 right-1/4" />
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
-        <div className="w-full max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Contenido textual */}
-            <div className="space-y-6 animate-fade-in">
-              <div className="space-y-2">
-                <h1 className="text-5xl md:text-6xl font-bold leading-tight text-white">
-                  Ingeniería detrás de tu{' '}
-                  <span className="bg-gradient-to-r from-[#FF7F70] to-[#FF6B5A] text-transparent bg-clip-text">
-                    estrategia digital
-                  </span>
-                </h1>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center">
+          {/* Heading with gradient */}
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-balance">
+            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+              Marketing Digital
+            </span>
+            <br />
+            <span className="text-foreground">que vende</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-lg sm:text-xl text-foreground/70 max-w-2xl mx-auto mb-12 leading-relaxed">
+            Kombinamos desarrollo técnico robusto con estrategias de marketing que convierten. Meta Ads, tracking avanzado e infraestructura profesional.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <button className="group px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-bold text-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2">
+              Comenzar Ahora
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </button>
+            <button className="px-8 py-4 border-2 border-secondary bg-white/50 backdrop-blur text-secondary rounded-full font-bold text-lg hover:bg-secondary/10 transition-all flex items-center justify-center gap-2">
+              <MessageCircle size={20} />
+              WhatsApp
+            </button>
+          </div>
+
+          {/* Cards showcase */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Analytics Card */}
+            <div className="soft-card p-6 rounded-2xl">
+              <div className="mb-4 inline-block bg-accent/20 px-3 py-1 rounded-full">
+                <span className="text-sm font-semibold text-accent">Meta Ads & Analytics</span>
               </div>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Fusionamos desarrollo de software robusto con marketing digital avanzado. Desde QA riguroso hasta campañas de Meta Ads potentes, transformamos tu visión en resultados medibles.
+              <h3 className="text-xl font-bold text-foreground mb-3">Campañas que Crecen</h3>
+              <p className="text-foreground/60 text-sm mb-4">
+                Tracking avanzado, optimización en tiempo real y ROI garantizado.
               </p>
-
-              {/* Botones de conversión */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] hover:bg-[#20BA58] text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                  <MessageCircle size={20} />
-                  Consultoría Gratuita por WhatsApp
-                </button>
-                <button className="flex items-center justify-center gap-2 px-8 py-4 glassmorphism text-white font-semibold rounded-full transition-all duration-300 hover:bg-opacity-10 group">
-                  Ver Servicios de Ingeniería
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+              <div className="h-24 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-end justify-around p-3">
+                <div className="w-8 h-12 bg-primary/40 rounded" />
+                <div className="w-8 h-16 bg-primary/60 rounded" />
+                <div className="w-8 h-20 bg-primary rounded" />
+                <div className="w-8 h-14 bg-primary/50 rounded" />
               </div>
             </div>
 
-            {/* Card glassmorphism con código y dashboard */}
-            <div className="relative h-full min-h-96 animate-float">
-              <div className="glassmorphism rounded-2xl p-6 space-y-4 h-full border border-white/10">
-                {/* Bloque de código */}
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#FF7F70]"></div>
-                    <span className="text-sm font-mono text-gray-400">api.config.ts</span>
-                  </div>
-                  <div className="bg-black/40 rounded-lg p-4 font-mono text-sm space-y-2">
-                    <div className="text-[#FF7F70]">const</div>
-                    <div className="text-blue-400">API_ENDPOINT</div>
-                    <div className="text-white">=</div>
-                    <div className="text-green-400">&quot;https://api.production.io&quot;</div>
-                    <div></div>
-                    <div className="text-gray-500">// QA Certificado</div>
-                    <div className="text-[#FF7F70]">const</div>
-                    <div className="text-blue-400">SSL_VERIFIED</div>
-                    <div className="text-white">=</div>
-                    <div className="text-green-400">true</div>
-                  </div>
-                </div>
-
-                {/* Divider */}
-                <div className="h-px bg-gradient-to-r from-[#FF7F70]/30 to-transparent"></div>
-
-                {/* Dashboard de métricas */}
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#25D366]"></div>
-                    <span className="text-sm font-mono text-gray-400">meta.analytics</span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-black/40 rounded-lg p-3">
-                      <div className="text-xs text-gray-400">ROAS</div>
-                      <div className="text-lg font-bold text-[#25D366]">4.2x</div>
-                    </div>
-                    <div className="bg-black/40 rounded-lg p-3">
-                      <div className="text-xs text-gray-400">Conversiones</div>
-                      <div className="text-lg font-bold text-[#25D366]">+156%</div>
-                    </div>
-                  </div>
-                </div>
+            {/* Code Card */}
+            <div className="soft-card p-6 rounded-2xl">
+              <div className="mb-4 inline-block bg-accent/20 px-3 py-1 rounded-full">
+                <span className="text-sm font-semibold text-accent">Ingeniería de Software</span>
               </div>
-
-              {/* Glow effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-[#FF7F70] to-[#25D366] rounded-2xl opacity-20 blur-xl -z-10 group-hover:opacity-40 transition-opacity duration-300"></div>
+              <h3 className="text-xl font-bold text-foreground mb-3">Código que Escala</h3>
+              <p className="text-foreground/60 text-sm mb-4">
+                Arquitectura moderna, testing riguroso y despliegue automatizado.
+              </p>
+              <div className="bg-foreground/5 rounded-lg p-3 font-mono text-sm overflow-hidden">
+                <div className="text-secondary">const</div>
+                <div className="text-foreground">
+                  <span className="text-primary">campaign</span> = <span className="text-secondary">grow</span>()
+                </div>
+                <div className="text-foreground/50">// Scaling infinitely</div>
+              </div>
             </div>
           </div>
         </div>

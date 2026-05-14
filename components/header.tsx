@@ -7,60 +7,64 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A0F1E]/80 backdrop-blur-lg border-b border-white/5">
-      <nav className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#FF7F70] to-[#FF6B5A] flex items-center justify-center">
-            <span className="text-white font-bold text-sm">ID</span>
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-primary/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <a href="/" className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                A
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent hidden sm:inline">
+                Arsabel
+              </span>
+            </a>
           </div>
-          <span className="font-bold text-white text-lg hidden sm:inline">Ingeniería Digital</span>
-        </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#servicios" className="text-gray-400 hover:text-white transition-colors text-sm">
-            Servicios
-          </a>
-          <a href="#porfolio" className="text-gray-400 hover:text-white transition-colors text-sm">
-            Portafolio
-          </a>
-          <a href="#contacto" className="text-gray-400 hover:text-white transition-colors text-sm">
-            Contacto
-          </a>
-          <button className="px-6 py-2 bg-gradient-to-r from-[#FF7F70] to-[#FF6B5A] text-white rounded-full hover:shadow-lg hover:shadow-[#FF7F70]/50 transition-all text-sm font-semibold">
-            Consulta Gratis
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#services" className="text-foreground/70 hover:text-primary font-medium transition">
+              Servicios
+            </a>
+            <a href="#portfolio" className="text-foreground/70 hover:text-primary font-medium transition">
+              Portafolio
+            </a>
+            <a href="#contact" className="text-foreground/70 hover:text-primary font-medium transition">
+              Contacto
+            </a>
+            <button className="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all">
+              Consulta Gratis
+            </button>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 hover:bg-primary/10 rounded-lg transition"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {/* Mobile Menu */}
+        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-[#0A0F1E] border-b border-white/5 md:hidden">
-            <div className="px-4 py-4 space-y-4">
-              <a href="#servicios" className="block text-gray-400 hover:text-white transition-colors">
-                Servicios
-              </a>
-              <a href="#porfolio" className="block text-gray-400 hover:text-white transition-colors">
-                Portafolio
-              </a>
-              <a href="#contacto" className="block text-gray-400 hover:text-white transition-colors">
-                Contacto
-              </a>
-              <button className="w-full px-6 py-2 bg-gradient-to-r from-[#FF7F70] to-[#FF6B5A] text-white rounded-full hover:shadow-lg transition-all font-semibold">
-                Consulta Gratis
-              </button>
-            </div>
-          </div>
+          <nav className="md:hidden pb-4 border-t border-primary/10 space-y-2">
+            <a href="#services" className="block py-2 text-foreground/70 hover:text-primary font-medium">
+              Servicios
+            </a>
+            <a href="#portfolio" className="block py-2 text-foreground/70 hover:text-primary font-medium">
+              Portafolio
+            </a>
+            <a href="#contact" className="block py-2 text-foreground/70 hover:text-primary font-medium">
+              Contacto
+            </a>
+            <button className="w-full mt-4 px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-semibold hover:shadow-lg transition">
+              Consulta Gratis
+            </button>
+          </nav>
         )}
-      </nav>
+      </div>
     </header>
   )
 }

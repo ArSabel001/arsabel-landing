@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Ingeniería y Estrategia Digital | Soluciones Técnicas',
-  description: 'Fusionamos desarrollo de software robusto con marketing digital avanzado. QA riguroso, Meta Ads potentes y despliegue de infraestructura profesional.',
+  title: 'Arsabel Digital | Ingeniería & Marketing',
+  description: 'Soluciones integrales de marketing digital y desarrollo de software. Meta Ads, tracking avanzado y infraestructura profesional.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -35,8 +35,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className="dark">
-      <body className="font-sans antialiased bg-background text-foreground">
+    <html lang="es" className="light">
+      <body className="font-sans antialiased bg-background text-foreground relative overflow-x-hidden">
+        <div className="pastel-mesh" />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
