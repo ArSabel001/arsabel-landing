@@ -36,6 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="light">
+      <head>
+        <meta name="facebook-domain-verification" content="sju7juoe79m2mcoq49olr4h8cm1s3g" />
+      </head>
       <body className="font-sans antialiased bg-background text-foreground relative overflow-x-hidden">
         <div className="pastel-mesh" />
         {children}
