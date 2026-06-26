@@ -72,7 +72,7 @@ export function Hero() {
                 <div className="text-foreground">
                   <span className="text-primary">campaign</span> = <span className="text-secondary">grow</span>()
                 </div>
-                <div className="text-foreground/50">// Scaling infinitely</div>
+                <div className="text-foreground/50">{"// Scaling infinitely"}</div>
               </div>
             </div>
           </div>

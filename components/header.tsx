@@ -2,6 +2,7 @@
 
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,14 +13,14 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-lg">
                 A
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent hidden sm:inline">
                 Arsabel
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}

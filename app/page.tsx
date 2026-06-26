@@ -3,6 +3,7 @@ import { Hero } from '@/components/hero'
 import { Differentials } from '@/components/differentials'
 import { TrustMetrics } from '@/components/trust-metrics'
 import { CTASection } from '@/components/cta-section'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -59,9 +60,9 @@ export default function Home() {
               © 2024 Arsabel Digital. Todos los derechos reservados.
             </p>
             <div className="flex gap-4 text-sm text-foreground/50">
-              <a href="#" className="hover:text-primary transition-colors">Privacidad</a>
-              <a href="#" className="hover:text-primary transition-colors">Términos</a>
-              <a href="#" className="hover:text-primary transition-colors">Cookies</a>
+              <Link href="/privacidad" className="hover:text-primary transition-colors">Privacidad</Link>
+              <Link href="/terminos" className="hover:text-primary transition-colors">Términos</Link>
+              <Link href="/privacidad#cookies" className="hover:text-primary transition-colors">Cookies</Link>
             </div>
           </div>
         </div>
