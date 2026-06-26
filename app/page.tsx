@@ -48,8 +48,6 @@ export default function Home() {
               <ul className="space-y-2 text-sm text-foreground/60">
                 <li><a href="mailto:info@arsabel.com" className="hover:text-primary transition-colors">info@arsabel.com</a></li>
                 <li><a href="tel:+5491234567890" className="hover:text-primary transition-colors">+54 9 123 456 7890</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">GitHub</a></li>
               </ul>
             </div>
           </div>
@@ -59,10 +57,11 @@ export default function Home() {
             <p className="text-foreground/50 text-sm text-center md:text-left">
               © 2024 Arsabel Digital. Todos los derechos reservados.
             </p>
-            <div className="flex gap-4 text-sm text-foreground/50">
+            <div className="flex flex-wrap gap-4 text-sm text-foreground/50">
               <Link href="/privacidad" className="hover:text-primary transition-colors">Privacidad</Link>
               <Link href="/terminos" className="hover:text-primary transition-colors">Términos</Link>
-              <Link href="/privacidad#cookies" className="hover:text-primary transition-colors">Cookies</Link>
+              <Link href="/cookies" className="hover:text-primary transition-colors">Cookies</Link>
+              <Link href="/eliminacion-datos" className="hover:text-primary transition-colors">Eliminación de Datos</Link>
             </div>
           </div>
         </div>
